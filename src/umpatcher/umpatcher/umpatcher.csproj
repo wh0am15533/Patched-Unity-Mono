@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;netcoreapp3.0</TargetFrameworks>
+    <RootNamespace>UnityMonoDllSourceCodePatcher</RootNamespace>
+    <Copyright>Copyright (C) 2018-2019 de4dot@gmail.com</Copyright>
+    <Version>1.0.0</Version>
+    <Authors>0xd4d</Authors>
+    <InformationalVersion>$(Version)</InformationalVersion>
+    <LangVersion>latest</LangVersion>
+    <Features>strict;nullablePublicOnly</Features>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="App.config" Condition=" '$(TargetFramework)' != 'net48' " />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+</Project>
